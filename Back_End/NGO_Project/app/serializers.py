@@ -1,8 +1,15 @@
 from rest_framework import serializers
-from .models import SuperAdminModel
+from .models import *
 
 
-class SuperAdminSerializer(serializers.ModelSerializer):
+class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
-        model=SuperAdminModel
-        fields =["id","name","email","contact","password","confirm_password"]
+        model=RegistrationModel
+        fields = "__all__"
+        
+        
+class AdminSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= AdminModel
+        fields= "__all__"
+    
